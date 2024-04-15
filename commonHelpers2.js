@@ -1,0 +1,2 @@
+import"./assets/styles-f6f8fcef.js";const t=document.querySelector(".feedback-form");t.addEventListener("input",n);t.addEventListener("submit",a);function n(e){const r={email:e.currentTarget.elements.email.value.trim(),message:e.currentTarget.elements.message.value.trim()};localStorage.setItem("feedback-form-state",JSON.stringify(r))}function a(e){e.preventDefault()}
+//# sourceMappingURL=commonHelpers2.js.map
