@@ -27,16 +27,19 @@ const setFormInputValues = (formRef, { email, message }) => {
 function onSubmit(event) {
     event.preventDefault();
     
-     const { email, message } = event.currentTarget.elements;
-    if (!email.value && !message.value) {
-        return alert("Email and message inputs should be filled in")
-    };
+  const { email, message } = event.currentTarget.elements;
+    const trimmedEmail = email.value.trim();
+    const trimmedMessage = message.value.trim();
 
-    const data = {
-        email: event.currentTarget.elements.email.value.trim(),
-        message: event.currentTarget.elements.message.value.trim()
+    if (!trimmedEmail || !trimmedMessage) {
+        return alert("Email and message inputs should be filled in");
     }
-    console.log(data)
+
+  const data = {
+        email: trimmedEmail,
+        message: trimmedMessage
+    };
+    console.log(data);
 
     clearFormInputs();
     localStorage.removeItem("feedback-form-state");
